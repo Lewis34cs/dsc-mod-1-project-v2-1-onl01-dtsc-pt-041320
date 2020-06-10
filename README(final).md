@@ -441,17 +441,17 @@ imdb_title_df['region'].value_counts()
 
 
 
-    US     51490
-    XWW    18467
-    RU     13817
-    DE     11634
-    FR     10990
-           ...  
-    AI         1
-    NC         1
-    SB         1
-    XNA        1
-    MQ         1
+    US      51490
+    XWW     18467
+    RU      13817
+    DE      11634
+    FR      10990
+            ...  
+    TO          1
+    AI          1
+    CSHH        1
+    LS          1
+    MQ          1
     Name: region, Length: 213, dtype: int64
 
 
@@ -4102,34 +4102,34 @@ unique_genres
 
 
 
-    ['horror',
-     'family',
-     'comedy',
+    ['war',
+     'talk-show',
      'sport',
-     'thriller',
-     'adult',
-     'crime',
-     'documentary',
-     'biography',
-     'n/a',
-     'western',
-     'mystery',
-     'romance',
      'news',
      'history',
-     'animation',
-     'reality-tv',
-     'fantasy',
-     'musical',
-     'adventure',
-     'war',
-     'sci-fi',
+     'western',
+     'thriller',
      'music',
-     'action',
-     'talk-show',
-     'short',
+     'mystery',
      'game-show',
-     'drama']
+     'action',
+     'musical',
+     'drama',
+     'n/a',
+     'horror',
+     'biography',
+     'adventure',
+     'adult',
+     'sci-fi',
+     'fantasy',
+     'animation',
+     'crime',
+     'short',
+     'documentary',
+     'reality-tv',
+     'family',
+     'comedy',
+     'romance']
 
 
 
@@ -4164,12 +4164,12 @@ genre_df.columns
 
 
 
-    Index(['primary_title', 'is_horror', 'is_family', 'is_comedy', 'is_sport',
-           'is_thriller', 'is_adult', 'is_crime', 'is_documentary', 'is_biography',
-           'is_n/a', 'is_western', 'is_mystery', 'is_romance', 'is_news',
-           'is_history', 'is_animation', 'is_reality-tv', 'is_fantasy', 'is_music',
-           'is_adventure', 'is_war', 'is_sci-fi', 'is_action', 'is_talk-show',
-           'is_short', 'is_game-show', 'is_drama'],
+    Index(['primary_title', 'is_war', 'is_talk-show', 'is_sport', 'is_news',
+           'is_history', 'is_western', 'is_thriller', 'is_music', 'is_mystery',
+           'is_game-show', 'is_action', 'is_drama', 'is_n/a', 'is_horror',
+           'is_biography', 'is_adventure', 'is_adult', 'is_sci-fi', 'is_fantasy',
+           'is_animation', 'is_crime', 'is_short', 'is_documentary',
+           'is_reality-tv', 'is_family', 'is_comedy', 'is_romance'],
           dtype='object')
 
 
@@ -4201,26 +4201,26 @@ genre_df.head(3)
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
+      <th>is_war</th>
+      <th>is_talk-show</th>
+      <th>is_sport</th>
+      <th>is_news</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
+      <th>...</th>
+      <th>is_sci-fi</th>
+      <th>is_fantasy</th>
+      <th>is_animation</th>
+      <th>is_crime</th>
+      <th>is_short</th>
+      <th>is_documentary</th>
+      <th>is_reality-tv</th>
       <th>is_family</th>
       <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_adult</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>...</th>
-      <th>is_fantasy</th>
-      <th>is_music</th>
-      <th>is_adventure</th>
-      <th>is_war</th>
-      <th>is_sci-fi</th>
-      <th>is_action</th>
-      <th>is_talk-show</th>
-      <th>is_short</th>
-      <th>is_game-show</th>
-      <th>is_drama</th>
+      <th>is_romance</th>
     </tr>
   </thead>
   <tbody>
@@ -4234,7 +4234,7 @@ genre_df.head(3)
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
       <td>False</td>
       <td>...</td>
       <td>False</td>
@@ -4242,7 +4242,7 @@ genre_df.head(3)
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -4251,7 +4251,7 @@ genre_df.head(3)
     <tr>
       <td>1</td>
       <td>#1 Serial Killer</td>
-      <td>True</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -4277,14 +4277,15 @@ genre_df.head(3)
       <td>#5</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
       <td>...</td>
+      <td>False</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -4292,8 +4293,7 @@ genre_df.head(3)
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -4435,23 +4435,23 @@ indiv_genre.head(3)
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
+      <th>is_war</th>
+      <th>is_talk-show</th>
+      <th>is_sport</th>
+      <th>is_news</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
+      <th>...</th>
+      <th>is_crime</th>
+      <th>is_short</th>
+      <th>is_documentary</th>
+      <th>is_reality-tv</th>
       <th>is_family</th>
       <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_adult</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>...</th>
-      <th>is_war</th>
-      <th>is_sci-fi</th>
-      <th>is_action</th>
-      <th>is_talk-show</th>
-      <th>is_short</th>
-      <th>is_game-show</th>
-      <th>is_drama</th>
+      <th>is_romance</th>
       <th>tconst</th>
       <th>original_title</th>
       <th>genres</th>
@@ -4468,12 +4468,12 @@ indiv_genre.head(3)
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -4485,7 +4485,7 @@ indiv_genre.head(3)
     <tr>
       <td>1</td>
       <td>#1 Serial Killer</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -4511,20 +4511,20 @@ indiv_genre.head(3)
       <td>#5</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>tt3120962</td>
       <td>#5</td>
@@ -4555,15 +4555,127 @@ indiv_genre_df.head(3)
 ```
 
 
-    ---------------------------------------------------------------------------
 
-    NameError                                 Traceback (most recent call last)
 
-    <ipython-input-1-23d30141bef0> in <module>
-    ----> 1 indiv_genre_df.head(3)
-    
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    NameError: name 'indiv_genre_df' is not defined
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_title</th>
+      <th>is_war</th>
+      <th>is_talk-show</th>
+      <th>is_sport</th>
+      <th>is_news</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
+      <th>...</th>
+      <th>is_reality-tv</th>
+      <th>is_family</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
+      <th>tconst</th>
+      <th>original_title</th>
+      <th>genres</th>
+      <th>production_budget</th>
+      <th>domestic_gross</th>
+      <th>worldwide_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Pirates of the Caribbean: On Stranger Tides</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1298650</td>
+      <td>Pirates of the Caribbean: On Stranger Tides</td>
+      <td>Action,Adventure,Fantasy</td>
+      <td>410600000.0</td>
+      <td>241063875.0</td>
+      <td>1.045664e+09</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Dark Phoenix</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt6565702</td>
+      <td>Dark Phoenix</td>
+      <td>Action,Adventure,Sci-Fi</td>
+      <td>350000000.0</td>
+      <td>42762350.0</td>
+      <td>1.497624e+08</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Avengers: Age of Ultron</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt2395427</td>
+      <td>Avengers: Age of Ultron</td>
+      <td>Action,Adventure,Sci-Fi</td>
+      <td>330600000.0</td>
+      <td>459005868.0</td>
+      <td>1.403014e+09</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 34 columns</p>
+</div>
+
 
 
 #### We are going to drop any duplicates by targeting primary_title, release_date, and production_budget
@@ -4627,19 +4739,19 @@ indiv_genre_df.head(3)
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
+      <th>is_war</th>
+      <th>is_talk-show</th>
+      <th>is_sport</th>
+      <th>is_news</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
+      <th>...</th>
       <th>is_family</th>
       <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_adult</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>...</th>
-      <th>is_short</th>
-      <th>is_game-show</th>
-      <th>is_drama</th>
+      <th>is_romance</th>
       <th>tconst</th>
       <th>original_title</th>
       <th>genres</th>
@@ -4763,18 +4875,18 @@ indiv_genre_df.head(3)
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
+      <th>is_war</th>
+      <th>is_talk-show</th>
       <th>is_sport</th>
+      <th>is_news</th>
+      <th>is_history</th>
+      <th>is_western</th>
       <th>is_thriller</th>
-      <th>is_adult</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>...</th>
-      <th>is_game-show</th>
-      <th>is_drama</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
       <th>tconst</th>
       <th>original_title</th>
       <th>genres</th>
@@ -4877,33 +4989,33 @@ for col in indiv_genre_df:
     
 ```
 
-    is_horror: 159
-    is_family: 84
-    is_comedy: 486
+    is_war: 18
+    is_talk-show: 0
     is_sport: 31
-    is_thriller: 240
-    is_adult: 0
-    is_crime: 205
-    is_documentary: 45
-    is_biography: 112
-    is_n/a: 3
-    is_western: 11
-    is_mystery: 121
-    is_romance: 178
     is_news: 0
     is_history: 41
-    is_animation: 98
-    is_reality-tv: 0
-    is_fantasy: 118
-    is_music: 59
-    is_adventure: 338
-    is_war: 18
-    is_sci-fi: 121
-    is_action: 394
-    is_talk-show: 0
-    is_short: 0
+    is_western: 11
+    is_thriller: 240
+    is_music: 7
+    is_mystery: 121
     is_game-show: 0
+    is_action: 394
     is_drama: 670
+    is_n/a: 3
+    is_horror: 159
+    is_biography: 112
+    is_adventure: 338
+    is_adult: 0
+    is_sci-fi: 121
+    is_fantasy: 118
+    is_animation: 98
+    is_crime: 205
+    is_short: 0
+    is_documentary: 45
+    is_reality-tv: 0
+    is_family: 84
+    is_comedy: 486
+    is_romance: 178
     
 
 #### It looks like there are a few - so let's remove these columns from the dataframe. We are also going to drop the 'n/a' column as well.
@@ -4924,26 +5036,26 @@ for col in indiv_genre_df:
     
 ```
 
-    is_horror: 159
-    is_family: 84
-    is_comedy: 486
-    is_sport: 31
-    is_thriller: 240
-    is_crime: 205
-    is_documentary: 45
-    is_biography: 112
-    is_western: 11
-    is_mystery: 121
-    is_romance: 178
-    is_history: 41
-    is_animation: 98
-    is_fantasy: 118
-    is_music: 59
-    is_adventure: 338
     is_war: 18
-    is_sci-fi: 121
+    is_sport: 31
+    is_history: 41
+    is_western: 11
+    is_thriller: 240
+    is_music: 7
+    is_mystery: 121
     is_action: 394
     is_drama: 670
+    is_horror: 159
+    is_biography: 112
+    is_adventure: 338
+    is_sci-fi: 121
+    is_fantasy: 118
+    is_animation: 98
+    is_crime: 205
+    is_documentary: 45
+    is_family: 84
+    is_comedy: 486
+    is_romance: 178
     
 
 #### Now we are going to make a list that contains all the column names within the indiv_genre_df
@@ -4975,18 +5087,18 @@ indiv_genre_df.head()
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
+      <th>is_war</th>
       <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
+      <th>is_history</th>
       <th>is_western</th>
-      <th>...</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>is_action</th>
       <th>is_drama</th>
+      <th>...</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
       <th>tconst</th>
       <th>original_title</th>
       <th>genres</th>
@@ -5008,10 +5120,10 @@ indiv_genre_df.head()
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>tt1298650</td>
       <td>Pirates of the Caribbean: On Stranger Tides</td>
@@ -5032,10 +5144,10 @@ indiv_genre_df.head()
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>tt6565702</td>
       <td>Dark Phoenix</td>
@@ -5056,10 +5168,10 @@ indiv_genre_df.head()
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>tt2395427</td>
       <td>Avengers: Age of Ultron</td>
@@ -5080,10 +5192,10 @@ indiv_genre_df.head()
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>tt4154756</td>
       <td>Avengers: Infinity War</td>
@@ -5104,10 +5216,10 @@ indiv_genre_df.head()
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>tt0974015</td>
       <td>Justice League</td>
@@ -5134,26 +5246,26 @@ col_list
 
 
 
-    ['is_horror',
-     'is_family',
-     'is_comedy',
+    ['is_war',
      'is_sport',
+     'is_history',
+     'is_western',
      'is_thriller',
+     'is_music',
+     'is_mystery',
+     'is_action',
+     'is_drama',
+     'is_horror',
+     'is_biography',
+     'is_adventure',
+     'is_sci-fi',
+     'is_fantasy',
+     'is_animation',
      'is_crime',
      'is_documentary',
-     'is_biography',
-     'is_western',
-     'is_mystery',
-     'is_romance',
-     'is_history',
-     'is_animation',
-     'is_fantasy',
-     'is_music',
-     'is_adventure',
-     'is_war',
-     'is_sci-fi',
-     'is_action',
-     'is_drama']
+     'is_family',
+     'is_comedy',
+     'is_romance']
 
 
 
@@ -5165,7 +5277,7 @@ indiv_genre_df.groupby(test_col).get_group(1)['tot_profit'].agg(['mean', 'median
 indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending=False)
 ```
 
-    is_horror
+    is_war
     
 
 
@@ -5190,18 +5302,18 @@ indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending
     <tr style="text-align: right;">
       <th></th>
       <th>primary_title</th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
+      <th>is_war</th>
       <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
+      <th>is_history</th>
       <th>is_western</th>
-      <th>...</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>is_action</th>
       <th>is_drama</th>
+      <th>...</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
       <th>tconst</th>
       <th>original_title</th>
       <th>genres</th>
@@ -5214,32 +5326,32 @@ indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending
   </thead>
   <tbody>
     <tr>
-      <td>534</td>
-      <td>It</td>
+      <td>186</td>
+      <td>300: Rise of an Empire</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>tt1396484</td>
-      <td>It</td>
-      <td>Horror,Thriller</td>
-      <td>35000000.0</td>
-      <td>327481748.0</td>
-      <td>697457969.0</td>
-      <td>662457969.0</td>
-      <td>1892.737054</td>
+      <td>tt1253863</td>
+      <td>300: Rise of an Empire</td>
+      <td>Action,Fantasy,War</td>
+      <td>110000000.0</td>
+      <td>106580051.0</td>
+      <td>330780051.0</td>
+      <td>220780051.0</td>
+      <td>200.709137</td>
     </tr>
     <tr>
-      <td>64</td>
-      <td>The Meg</td>
+      <td>266</td>
+      <td>Fury</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -5247,23 +5359,23 @@ indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>1</td>
       <td>...</td>
-      <td>1</td>
       <td>0</td>
-      <td>tt4779682</td>
-      <td>The Meg</td>
-      <td>Action,Horror,Sci-Fi</td>
-      <td>178000000.0</td>
-      <td>145443742.0</td>
-      <td>529530715.0</td>
-      <td>351530715.0</td>
-      <td>197.489166</td>
+      <td>0</td>
+      <td>tt2713180</td>
+      <td>Fury</td>
+      <td>Action,Drama,War</td>
+      <td>80000000.0</td>
+      <td>85817906.0</td>
+      <td>210315681.0</td>
+      <td>130315681.0</td>
+      <td>162.894601</td>
     </tr>
     <tr>
-      <td>47</td>
-      <td>World War Z</td>
+      <td>685</td>
+      <td>Dear John</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -5272,118 +5384,310 @@ indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>...</td>
-      <td>1</td>
       <td>0</td>
-      <td>tt0816711</td>
-      <td>World War Z</td>
-      <td>Action,Adventure,Horror</td>
-      <td>190000000.0</td>
-      <td>202359711.0</td>
-      <td>531514650.0</td>
-      <td>341514650.0</td>
-      <td>179.744553</td>
+      <td>1</td>
+      <td>tt0989757</td>
+      <td>Dear John</td>
+      <td>Drama,Romance,War</td>
+      <td>25000000.0</td>
+      <td>80014842.0</td>
+      <td>142033509.0</td>
+      <td>117033509.0</td>
+      <td>468.134036</td>
     </tr>
     <tr>
-      <td>850</td>
-      <td>A Quiet Place</td>
+      <td>291</td>
+      <td>War Horse</td>
+      <td>1</td>
+      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>...</td>
       <td>0</td>
-      <td>1</td>
-      <td>tt6644200</td>
-      <td>A Quiet Place</td>
-      <td>Drama,Horror,Sci-Fi</td>
-      <td>17000000.0</td>
-      <td>188024361.0</td>
-      <td>334522294.0</td>
-      <td>317522294.0</td>
-      <td>1867.778200</td>
+      <td>0</td>
+      <td>tt1568911</td>
+      <td>War Horse</td>
+      <td>Drama,History,War</td>
+      <td>70000000.0</td>
+      <td>79883359.0</td>
+      <td>156815529.0</td>
+      <td>86815529.0</td>
+      <td>124.022184</td>
     </tr>
     <tr>
-      <td>762</td>
-      <td>The Conjuring</td>
+      <td>822</td>
+      <td>The Book Thief</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>tt1457767</td>
-      <td>The Conjuring</td>
-      <td>Horror,Mystery,Thriller</td>
-      <td>20000000.0</td>
-      <td>137400141.0</td>
-      <td>318000141.0</td>
-      <td>298000141.0</td>
-      <td>1490.000705</td>
+      <td>tt0816442</td>
+      <td>The Book Thief</td>
+      <td>Drama,War</td>
+      <td>19000000.0</td>
+      <td>21488481.0</td>
+      <td>76086711.0</td>
+      <td>57086711.0</td>
+      <td>300.456374</td>
     </tr>
     <tr>
+      <td>1099</td>
+      <td>Incendies</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1255953</td>
+      <td>Incendies</td>
+      <td>Drama,Mystery,War</td>
+      <td>6800000.0</td>
+      <td>6857096.0</td>
+      <td>16038343.0</td>
+      <td>9238343.0</td>
+      <td>135.857985</td>
     </tr>
     <tr>
-      <td>901</td>
-      <td>The Disappointments Room</td>
+      <td>1242</td>
+      <td>Indivisible</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt6512428</td>
+      <td>Indivisible</td>
+      <td>Drama,War</td>
+      <td>2700000.0</td>
+      <td>3511417.0</td>
+      <td>3588305.0</td>
+      <td>888305.0</td>
+      <td>32.900185</td>
+    </tr>
+    <tr>
+      <td>1327</td>
+      <td>Camp X-Ray</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt2994190</td>
+      <td>Camp X-Ray</td>
+      <td>Drama,War</td>
+      <td>1000000.0</td>
+      <td>9837.0</td>
+      <td>101053.0</td>
+      <td>-898947.0</td>
+      <td>-89.894700</td>
+    </tr>
+    <tr>
+      <td>1295</td>
+      <td>Amigo</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1562847</td>
+      <td>Amigo</td>
+      <td>Drama,War</td>
+      <td>1500000.0</td>
+      <td>184705.0</td>
+      <td>184705.0</td>
+      <td>-1315295.0</td>
+      <td>-87.686333</td>
+    </tr>
+    <tr>
+      <td>965</td>
+      <td>For Greater Glory: The True Story of Cristiada</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1566501</td>
+      <td>For Greater Glory: The True Story of Cristiada</td>
+      <td>Drama,History,War</td>
+      <td>12000000.0</td>
+      <td>5669081.0</td>
+      <td>10026255.0</td>
+      <td>-1973745.0</td>
+      <td>-16.447875</td>
+    </tr>
+    <tr>
+      <td>1236</td>
+      <td>Fort McCoy</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1282046</td>
+      <td>Fort McCoy</td>
+      <td>Drama,History,War</td>
+      <td>3000000.0</td>
+      <td>78948.0</td>
+      <td>78948.0</td>
+      <td>-2921052.0</td>
+      <td>-97.368400</td>
+    </tr>
+    <tr>
+      <td>1052</td>
+      <td>Beneath Hill 60</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt1418646</td>
+      <td>Beneath Hill 60</td>
+      <td>Drama,History,War</td>
+      <td>9000000.0</td>
+      <td>0.0</td>
+      <td>3440939.0</td>
+      <td>-5559061.0</td>
+      <td>-61.767344</td>
+    </tr>
+    <tr>
+      <td>1027</td>
+      <td>Coriolanus</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt3313066</td>
+      <td>National Theatre Live: Coriolanus</td>
+      <td>Drama,History,War</td>
+      <td>10000000.0</td>
+      <td>749641.0</td>
+      <td>2179623.0</td>
+      <td>-7820377.0</td>
+      <td>-78.203770</td>
+    </tr>
+    <tr>
+      <td>1029</td>
+      <td>Cinco de Mayo, La Batalla</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>tt2553908</td>
+      <td>Cinco de Mayo: La batalla</td>
+      <td>Drama,History,War</td>
+      <td>10000000.0</td>
+      <td>173472.0</td>
+      <td>173472.0</td>
+      <td>-9826528.0</td>
+      <td>-98.265280</td>
+    </tr>
+    <tr>
+      <td>900</td>
+      <td>Rock the Kasbah</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
-      <td>0</td>
       <td>1</td>
-      <td>tt2364897</td>
-      <td>The Disappointments Room</td>
-      <td>Drama,Horror,Thriller</td>
+      <td>0</td>
+      <td>tt3164256</td>
+      <td>Rock the Kasbah</td>
+      <td>Comedy,Music,War</td>
       <td>15000000.0</td>
-      <td>2423467.0</td>
-      <td>3503761.0</td>
-      <td>-11496239.0</td>
-      <td>-76.641593</td>
+      <td>3020665.0</td>
+      <td>3386153.0</td>
+      <td>-11613847.0</td>
+      <td>-77.425647</td>
     </tr>
     <tr>
-      <td>380</td>
-      <td>Annihilation</td>
+      <td>968</td>
+      <td>5 Days of War</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -5391,95 +5695,71 @@ indiv_genre_df[indiv_genre_df[test_col] == 1].sort_values('tot_profit',ascending
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
       <td>1</td>
-      <td>tt2798920</td>
-      <td>Annihilation</td>
-      <td>Adventure,Drama,Horror</td>
-      <td>55000000.0</td>
-      <td>32732301.0</td>
-      <td>43070915.0</td>
-      <td>-11929085.0</td>
-      <td>-21.689245</td>
-    </tr>
-    <tr>
-      <td>808</td>
-      <td>Suspiria</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>tt1034415</td>
-      <td>Suspiria</td>
-      <td>Fantasy,Horror,Mystery</td>
-      <td>20000000.0</td>
-      <td>2483472.0</td>
-      <td>7034615.0</td>
-      <td>-12965385.0</td>
-      <td>-64.826925</td>
+      <td>tt1486193</td>
+      <td>5 Days of War</td>
+      <td>Action,Drama,War</td>
+      <td>12000000.0</td>
+      <td>17479.0</td>
+      <td>87793.0</td>
+      <td>-11912207.0</td>
+      <td>-99.268392</td>
     </tr>
     <tr>
-      <td>870</td>
-      <td>Vamps</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
+      <td>759</td>
+      <td>Bitter Harvest</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>tt3182620</td>
+      <td>Bitter Harvest</td>
+      <td>Drama,Romance,War</td>
+      <td>21000000.0</td>
+      <td>557241.0</td>
+      <td>606162.0</td>
+      <td>-20393838.0</td>
+      <td>-97.113514</td>
+    </tr>
+    <tr>
+      <td>532</td>
+      <td>There Be Dragons</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>tt1719676</td>
-      <td>Vamps</td>
-      <td>Comedy,Horror,Thriller</td>
-      <td>16000000.0</td>
-      <td>3361.0</td>
-      <td>94812.0</td>
-      <td>-15905188.0</td>
-      <td>-99.407425</td>
-    </tr>
-    <tr>
-      <td>584</td>
-      <td>Freaks of Nature</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>tt1817771</td>
-      <td>Freaks of Nature</td>
-      <td>Comedy,Horror,Sci-Fi</td>
-      <td>33000000.0</td>
-      <td>70958.0</td>
-      <td>70958.0</td>
-      <td>-32929042.0</td>
-      <td>-99.784976</td>
+      <td>tt1316616</td>
+      <td>There Be Dragons</td>
+      <td>Biography,Drama,War</td>
+      <td>36000000.0</td>
+      <td>1069334.0</td>
+      <td>4020990.0</td>
+      <td>-31979010.0</td>
+      <td>-88.830583</td>
     </tr>
   </tbody>
 </table>
-<p>159 rows × 29 columns</p>
+<p>18 rows × 29 columns</p>
 </div>
 
 
@@ -5525,143 +5805,143 @@ profit_df
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>is_western</th>
-      <th>is_mystery</th>
-      <th>is_romance</th>
-      <th>is_history</th>
-      <th>is_animation</th>
-      <th>is_fantasy</th>
-      <th>is_music</th>
-      <th>is_adventure</th>
       <th>is_war</th>
-      <th>is_sci-fi</th>
+      <th>is_sport</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>is_action</th>
       <th>is_drama</th>
+      <th>is_horror</th>
+      <th>is_biography</th>
+      <th>is_adventure</th>
+      <th>is_sci-fi</th>
+      <th>is_fantasy</th>
+      <th>is_animation</th>
+      <th>is_crime</th>
+      <th>is_documentary</th>
+      <th>is_family</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
-      <td>341514650.0</td>
-      <td>767003568.0</td>
-      <td>326477240.0</td>
-      <td>1.122470e+09</td>
-      <td>5.796209e+08</td>
-      <td>9.848463e+08</td>
-      <td>70720921.0</td>
-      <td>397938302.0</td>
-      <td>-14997885.0</td>
-      <td>74357408.0</td>
-      <td>161040419.0</td>
-      <td>-33396176.0</td>
-      <td>3.264772e+08</td>
-      <td>635063875.0</td>
-      <td>1.099200e+09</td>
-      <td>6.350639e+08</td>
       <td>220780051.0</td>
-      <td>-2.002376e+08</td>
+      <td>1.122470e+09</td>
+      <td>-33396176.0</td>
+      <td>-14997885.0</td>
+      <td>5.796209e+08</td>
+      <td>1.099200e+09</td>
+      <td>74357408.0</td>
       <td>6.350639e+08</td>
       <td>112459006.0</td>
+      <td>341514650.0</td>
+      <td>397938302.0</td>
+      <td>6.350639e+08</td>
+      <td>-2.002376e+08</td>
+      <td>635063875.0</td>
+      <td>3.264772e+08</td>
+      <td>9.848463e+08</td>
+      <td>70720921.0</td>
+      <td>767003568.0</td>
+      <td>326477240.0</td>
+      <td>161040419.0</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>351530715.0</td>
-      <td>825491110.0</td>
-      <td>439213485.0</td>
-      <td>9.852782e+07</td>
-      <td>8.094391e+08</td>
-      <td>1.328723e+09</td>
-      <td>60230839.0</td>
-      <td>289870414.0</td>
-      <td>349948323.0</td>
-      <td>160650494.0</td>
-      <td>192239672.0</td>
-      <td>349837368.0</td>
-      <td>1.042521e+09</td>
-      <td>355945209.0</td>
-      <td>3.026656e+08</td>
-      <td>-2.002376e+08</td>
       <td>130315681.0</td>
-      <td>1.072414e+09</td>
+      <td>9.852782e+07</td>
+      <td>349837368.0</td>
+      <td>349948323.0</td>
+      <td>8.094391e+08</td>
+      <td>3.026656e+08</td>
+      <td>160650494.0</td>
       <td>-2.002376e+08</td>
       <td>161040419.0</td>
+      <td>351530715.0</td>
+      <td>289870414.0</td>
+      <td>-2.002376e+08</td>
+      <td>1.072414e+09</td>
+      <td>355945209.0</td>
+      <td>1.042521e+09</td>
+      <td>1.328723e+09</td>
+      <td>60230839.0</td>
+      <td>825491110.0</td>
+      <td>439213485.0</td>
+      <td>192239672.0</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>88202668.0</td>
-      <td>290359051.0</td>
-      <td>821215193.0</td>
-      <td>-1.218109e+07</td>
-      <td>9.848463e+08</td>
-      <td>6.792360e+08</td>
-      <td>74008792.0</td>
-      <td>-10306691.0</td>
-      <td>72525156.0</td>
-      <td>277448265.0</td>
-      <td>210650574.0</td>
-      <td>70720921.0</td>
-      <td>8.212152e+08</td>
-      <td>118151347.0</td>
-      <td>-8.968068e+06</td>
-      <td>1.072414e+09</td>
       <td>86815529.0</td>
-      <td>1.748134e+09</td>
+      <td>-1.218109e+07</td>
+      <td>70720921.0</td>
+      <td>72525156.0</td>
+      <td>9.848463e+08</td>
+      <td>-8.968068e+06</td>
+      <td>277448265.0</td>
       <td>1.072414e+09</td>
       <td>74357408.0</td>
+      <td>88202668.0</td>
+      <td>-10306691.0</td>
+      <td>1.072414e+09</td>
+      <td>1.748134e+09</td>
+      <td>118151347.0</td>
+      <td>8.212152e+08</td>
+      <td>6.792360e+08</td>
+      <td>74008792.0</td>
+      <td>290359051.0</td>
+      <td>821215193.0</td>
+      <td>210650574.0</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>-7365642.0</td>
-      <td>452220086.0</td>
-      <td>868879522.0</td>
-      <td>1.635915e+08</td>
-      <td>9.105270e+08</td>
-      <td>5.051635e+08</td>
-      <td>-13632971.0</td>
-      <td>70720921.0</td>
-      <td>-33485675.0</td>
-      <td>86856088.0</td>
-      <td>199680778.0</td>
-      <td>-79448583.0</td>
-      <td>8.688795e+08</td>
-      <td>617500281.0</td>
-      <td>8.399853e+08</td>
-      <td>1.748134e+09</td>
       <td>-31979010.0</td>
-      <td>7.778100e+06</td>
+      <td>1.635915e+08</td>
+      <td>-79448583.0</td>
+      <td>-33485675.0</td>
+      <td>9.105270e+08</td>
+      <td>3.555268e+07</td>
+      <td>86856088.0</td>
       <td>1.748134e+09</td>
       <td>168902025.0</td>
+      <td>-7365642.0</td>
+      <td>70720921.0</td>
+      <td>1.748134e+09</td>
+      <td>7.778100e+06</td>
+      <td>617500281.0</td>
+      <td>8.688795e+08</td>
+      <td>5.051635e+08</td>
+      <td>-13632971.0</td>
+      <td>452220086.0</td>
+      <td>868879522.0</td>
+      <td>199680778.0</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>141521247.0</td>
-      <td>437234314.0</td>
-      <td>543588329.0</td>
-      <td>6.130084e+07</td>
-      <td>1.328723e+09</td>
-      <td>4.106634e+08</td>
-      <td>-9406527.0</td>
-      <td>302665550.0</td>
-      <td>217276928.0</td>
-      <td>28673154.0</td>
-      <td>90805525.0</td>
-      <td>86815529.0</td>
-      <td>5.435883e+08</td>
-      <td>767003568.0</td>
-      <td>3.555268e+07</td>
-      <td>3.559452e+08</td>
       <td>117033509.0</td>
-      <td>8.900694e+08</td>
+      <td>6.130084e+07</td>
+      <td>86815529.0</td>
+      <td>217276928.0</td>
+      <td>1.328723e+09</td>
+      <td>-5.068194e+06</td>
+      <td>28673154.0</td>
       <td>3.559452e+08</td>
       <td>47784.0</td>
+      <td>141521247.0</td>
+      <td>302665550.0</td>
+      <td>3.559452e+08</td>
+      <td>8.900694e+08</td>
+      <td>767003568.0</td>
+      <td>5.435883e+08</td>
+      <td>4.106634e+08</td>
+      <td>-9406527.0</td>
+      <td>437234314.0</td>
+      <td>543588329.0</td>
+      <td>90805525.0</td>
     </tr>
     <tr>
       <td>...</td>
@@ -5696,18 +5976,18 @@ profit_df
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>-61445.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <td>666</td>
@@ -5719,18 +5999,18 @@ profit_df
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>374149.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <td>667</td>
@@ -5742,18 +6022,18 @@ profit_df
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>114822.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <td>668</td>
@@ -5765,18 +6045,18 @@ profit_df
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>-23453.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <td>669</td>
@@ -5788,18 +6068,18 @@ profit_df
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>-4416.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -5821,12 +6101,12 @@ profit_df.describe().loc['mean'].sort_values(ascending=False)
     is_animation      2.682845e+08
     is_sci-fi         2.619044e+08
     is_adventure      2.502832e+08
+    is_music          2.027985e+08
     is_action         1.762202e+08
     is_fantasy        1.581110e+08
     is_family         1.503116e+08
     is_comedy         9.643817e+07
     is_thriller       8.612681e+07
-    is_music          6.973485e+07
     is_mystery        6.751390e+07
     is_sport          6.285834e+07
     is_biography      6.213725e+07
@@ -5868,212 +6148,212 @@ profit_df.describe()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>is_western</th>
-      <th>is_mystery</th>
-      <th>is_romance</th>
-      <th>is_history</th>
-      <th>is_animation</th>
-      <th>is_fantasy</th>
-      <th>is_music</th>
-      <th>is_adventure</th>
       <th>is_war</th>
-      <th>is_sci-fi</th>
+      <th>is_sport</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>is_action</th>
       <th>is_drama</th>
+      <th>is_horror</th>
+      <th>is_biography</th>
+      <th>is_adventure</th>
+      <th>is_sci-fi</th>
+      <th>is_fantasy</th>
+      <th>is_animation</th>
+      <th>is_crime</th>
+      <th>is_documentary</th>
+      <th>is_family</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>count</td>
-      <td>1.590000e+02</td>
-      <td>8.400000e+01</td>
-      <td>4.860000e+02</td>
-      <td>3.100000e+01</td>
-      <td>2.400000e+02</td>
-      <td>2.050000e+02</td>
-      <td>4.500000e+01</td>
-      <td>1.120000e+02</td>
-      <td>1.100000e+01</td>
-      <td>1.210000e+02</td>
-      <td>1.780000e+02</td>
-      <td>4.100000e+01</td>
-      <td>9.800000e+01</td>
-      <td>1.180000e+02</td>
-      <td>5.900000e+01</td>
-      <td>3.380000e+02</td>
       <td>1.800000e+01</td>
+      <td>3.100000e+01</td>
+      <td>4.100000e+01</td>
+      <td>1.100000e+01</td>
+      <td>2.400000e+02</td>
+      <td>7.000000e+00</td>
       <td>1.210000e+02</td>
       <td>3.940000e+02</td>
       <td>6.700000e+02</td>
+      <td>1.590000e+02</td>
+      <td>1.120000e+02</td>
+      <td>3.380000e+02</td>
+      <td>1.210000e+02</td>
+      <td>1.180000e+02</td>
+      <td>9.800000e+01</td>
+      <td>2.050000e+02</td>
+      <td>4.500000e+01</td>
+      <td>8.400000e+01</td>
+      <td>4.860000e+02</td>
+      <td>1.780000e+02</td>
     </tr>
     <tr>
       <td>mean</td>
-      <td>5.781108e+07</td>
-      <td>1.503116e+08</td>
-      <td>9.643817e+07</td>
-      <td>6.285834e+07</td>
-      <td>8.612681e+07</td>
-      <td>5.613160e+07</td>
-      <td>1.175151e+07</td>
-      <td>6.213725e+07</td>
-      <td>5.105298e+07</td>
-      <td>6.751390e+07</td>
-      <td>5.105321e+07</td>
-      <td>4.830813e+07</td>
-      <td>2.682845e+08</td>
-      <td>1.581110e+08</td>
-      <td>6.973485e+07</td>
-      <td>2.502832e+08</td>
       <td>2.866357e+07</td>
-      <td>2.619044e+08</td>
+      <td>6.285834e+07</td>
+      <td>4.830813e+07</td>
+      <td>5.105298e+07</td>
+      <td>8.612681e+07</td>
+      <td>2.027985e+08</td>
+      <td>6.751390e+07</td>
       <td>1.762202e+08</td>
       <td>5.041892e+07</td>
+      <td>5.781108e+07</td>
+      <td>6.213725e+07</td>
+      <td>2.502832e+08</td>
+      <td>2.619044e+08</td>
+      <td>1.581110e+08</td>
+      <td>2.682845e+08</td>
+      <td>5.613160e+07</td>
+      <td>1.175151e+07</td>
+      <td>1.503116e+08</td>
+      <td>9.643817e+07</td>
+      <td>5.105321e+07</td>
     </tr>
     <tr>
       <td>std</td>
-      <td>9.052261e+07</td>
-      <td>2.273314e+08</td>
-      <td>1.681997e+08</td>
-      <td>2.063058e+08</td>
-      <td>1.691911e+08</td>
-      <td>1.413167e+08</td>
-      <td>3.053817e+07</td>
-      <td>1.191460e+08</td>
-      <td>1.217093e+08</td>
-      <td>9.245466e+07</td>
-      <td>7.736713e+07</td>
-      <td>8.576800e+07</td>
-      <td>2.681278e+08</td>
-      <td>2.416574e+08</td>
-      <td>1.886943e+08</td>
-      <td>3.018875e+08</td>
       <td>6.749072e+07</td>
-      <td>3.512185e+08</td>
+      <td>2.063058e+08</td>
+      <td>8.576800e+07</td>
+      <td>1.217093e+08</td>
+      <td>1.691911e+08</td>
+      <td>4.109609e+08</td>
+      <td>9.245466e+07</td>
       <td>2.702076e+08</td>
       <td>1.117940e+08</td>
+      <td>9.052261e+07</td>
+      <td>1.191460e+08</td>
+      <td>3.018875e+08</td>
+      <td>3.512185e+08</td>
+      <td>2.416574e+08</td>
+      <td>2.681278e+08</td>
+      <td>1.413167e+08</td>
+      <td>3.053817e+07</td>
+      <td>2.273314e+08</td>
+      <td>1.681997e+08</td>
+      <td>7.736713e+07</td>
     </tr>
     <tr>
       <td>min</td>
-      <td>-3.292904e+07</td>
-      <td>-1.104502e+08</td>
-      <td>-1.069000e+08</td>
+      <td>-3.197901e+07</td>
       <td>-2.121325e+07</td>
+      <td>-7.944858e+07</td>
+      <td>-3.348568e+07</td>
       <td>-5.033500e+07</td>
+      <td>-8.968068e+06</td>
+      <td>-1.977277e+07</td>
+      <td>-2.002376e+08</td>
+      <td>-7.944858e+07</td>
+      <td>-3.292904e+07</td>
+      <td>-3.442146e+07</td>
+      <td>-2.002376e+08</td>
+      <td>-2.002376e+08</td>
+      <td>-6.953398e+07</td>
+      <td>-1.104502e+08</td>
       <td>-5.033500e+07</td>
       <td>-1.363297e+07</td>
-      <td>-3.442146e+07</td>
-      <td>-3.348568e+07</td>
-      <td>-1.977277e+07</td>
-      <td>-3.494610e+07</td>
-      <td>-7.944858e+07</td>
       <td>-1.104502e+08</td>
-      <td>-6.953398e+07</td>
-      <td>-1.990318e+07</td>
-      <td>-2.002376e+08</td>
-      <td>-3.197901e+07</td>
-      <td>-2.002376e+08</td>
-      <td>-2.002376e+08</td>
-      <td>-7.944858e+07</td>
+      <td>-1.069000e+08</td>
+      <td>-3.494610e+07</td>
     </tr>
     <tr>
       <td>25%</td>
-      <td>2.417755e+05</td>
-      <td>1.451086e+07</td>
-      <td>2.302288e+06</td>
-      <td>-6.295874e+06</td>
-      <td>-4.895682e+05</td>
-      <td>-3.924991e+06</td>
-      <td>-5.562910e+05</td>
-      <td>-4.985789e+06</td>
-      <td>-1.139016e+07</td>
-      <td>1.360665e+06</td>
-      <td>6.155980e+05</td>
-      <td>-8.383647e+06</td>
-      <td>5.214399e+07</td>
-      <td>8.252677e+06</td>
-      <td>-1.882919e+06</td>
-      <td>2.854137e+07</td>
       <td>-9.324990e+06</td>
-      <td>1.355328e+07</td>
+      <td>-6.295874e+06</td>
+      <td>-8.383647e+06</td>
+      <td>-1.139016e+07</td>
+      <td>-4.895682e+05</td>
+      <td>-3.532879e+06</td>
+      <td>1.360665e+06</td>
       <td>7.660605e+06</td>
       <td>-2.075244e+06</td>
+      <td>2.417755e+05</td>
+      <td>-4.985789e+06</td>
+      <td>2.854137e+07</td>
+      <td>1.355328e+07</td>
+      <td>8.252677e+06</td>
+      <td>5.214399e+07</td>
+      <td>-3.924991e+06</td>
+      <td>-5.562910e+05</td>
+      <td>1.451086e+07</td>
+      <td>2.302288e+06</td>
+      <td>6.155980e+05</td>
     </tr>
     <tr>
       <td>50%</td>
-      <td>2.800587e+07</td>
-      <td>5.896908e+07</td>
-      <td>3.334312e+07</td>
-      <td>1.659955e+06</td>
-      <td>3.102218e+07</td>
-      <td>1.731787e+07</td>
-      <td>1.495262e+06</td>
-      <td>2.113212e+07</td>
-      <td>-7.495500e+05</td>
-      <td>3.678539e+07</td>
-      <td>2.080049e+07</td>
-      <td>1.182779e+07</td>
-      <td>1.941399e+08</td>
-      <td>4.823342e+07</td>
-      <td>5.601987e+06</td>
-      <td>1.367544e+08</td>
       <td>-1.644520e+06</td>
-      <td>1.236173e+08</td>
+      <td>1.659955e+06</td>
+      <td>1.182779e+07</td>
+      <td>-7.495500e+05</td>
+      <td>3.102218e+07</td>
+      <td>-1.794702e+06</td>
+      <td>3.678539e+07</td>
       <td>7.024338e+07</td>
       <td>1.292354e+07</td>
+      <td>2.800587e+07</td>
+      <td>2.113212e+07</td>
+      <td>1.367544e+08</td>
+      <td>1.236173e+08</td>
+      <td>4.823342e+07</td>
+      <td>1.941399e+08</td>
+      <td>1.731787e+07</td>
+      <td>1.495262e+06</td>
+      <td>5.896908e+07</td>
+      <td>3.334312e+07</td>
+      <td>2.080049e+07</td>
     </tr>
     <tr>
       <td>75%</td>
-      <td>7.680511e+07</td>
-      <td>1.822006e+08</td>
-      <td>1.120915e+08</td>
-      <td>3.052326e+07</td>
-      <td>1.006796e+08</td>
-      <td>6.594536e+07</td>
-      <td>6.962436e+06</td>
-      <td>7.932608e+07</td>
-      <td>3.748605e+07</td>
-      <td>8.685609e+07</td>
-      <td>7.394852e+07</td>
-      <td>8.870275e+07</td>
-      <td>3.957044e+08</td>
-      <td>1.842345e+08</td>
-      <td>5.214094e+07</td>
-      <td>3.858897e+08</td>
       <td>4.512462e+07</td>
-      <td>3.690761e+08</td>
+      <td>3.052326e+07</td>
+      <td>8.870275e+07</td>
+      <td>3.748605e+07</td>
+      <td>1.006796e+08</td>
+      <td>1.691091e+08</td>
+      <td>8.685609e+07</td>
       <td>2.309313e+08</td>
       <td>5.791563e+07</td>
+      <td>7.680511e+07</td>
+      <td>7.932608e+07</td>
+      <td>3.858897e+08</td>
+      <td>3.690761e+08</td>
+      <td>1.842345e+08</td>
+      <td>3.957044e+08</td>
+      <td>6.594536e+07</td>
+      <td>6.962436e+06</td>
+      <td>1.822006e+08</td>
+      <td>1.120915e+08</td>
+      <td>7.394852e+07</td>
     </tr>
     <tr>
       <td>max</td>
+      <td>2.207801e+08</td>
+      <td>1.122470e+09</td>
+      <td>3.498374e+08</td>
+      <td>3.499483e+08</td>
+      <td>1.328723e+09</td>
+      <td>1.099200e+09</td>
+      <td>5.064643e+08</td>
+      <td>1.748134e+09</td>
+      <td>1.122470e+09</td>
       <td>6.624580e+08</td>
+      <td>8.399853e+08</td>
+      <td>1.748134e+09</td>
+      <td>1.748134e+09</td>
       <td>1.099200e+09</td>
       <td>1.086336e+09</td>
-      <td>1.122470e+09</td>
-      <td>1.328723e+09</td>
       <td>1.328723e+09</td>
       <td>1.516858e+08</td>
-      <td>8.399853e+08</td>
-      <td>3.499483e+08</td>
-      <td>5.064643e+08</td>
-      <td>5.309981e+08</td>
-      <td>3.498374e+08</td>
+      <td>1.099200e+09</td>
       <td>1.086336e+09</td>
-      <td>1.099200e+09</td>
-      <td>1.099200e+09</td>
-      <td>1.748134e+09</td>
-      <td>2.207801e+08</td>
-      <td>1.748134e+09</td>
-      <td>1.748134e+09</td>
-      <td>1.122470e+09</td>
+      <td>5.309981e+08</td>
     </tr>
   </tbody>
 </table>
@@ -6115,12 +6395,12 @@ profit_df.head()
       <th>is_animation</th>
       <th>is_sci-fi</th>
       <th>is_adventure</th>
+      <th>is_music</th>
       <th>is_action</th>
       <th>is_fantasy</th>
       <th>is_family</th>
       <th>is_comedy</th>
       <th>is_thriller</th>
-      <th>is_music</th>
       <th>is_mystery</th>
       <th>is_sport</th>
       <th>is_biography</th>
@@ -6140,12 +6420,12 @@ profit_df.head()
       <td>3.264772e+08</td>
       <td>-2.002376e+08</td>
       <td>6.350639e+08</td>
+      <td>1.099200e+09</td>
       <td>6.350639e+08</td>
       <td>635063875.0</td>
       <td>767003568.0</td>
       <td>326477240.0</td>
       <td>5.796209e+08</td>
-      <td>1.099200e+09</td>
       <td>74357408.0</td>
       <td>1.122470e+09</td>
       <td>397938302.0</td>
@@ -6163,12 +6443,12 @@ profit_df.head()
       <td>1.042521e+09</td>
       <td>1.072414e+09</td>
       <td>-2.002376e+08</td>
+      <td>3.026656e+08</td>
       <td>-2.002376e+08</td>
       <td>355945209.0</td>
       <td>825491110.0</td>
       <td>439213485.0</td>
       <td>8.094391e+08</td>
-      <td>3.026656e+08</td>
       <td>160650494.0</td>
       <td>9.852782e+07</td>
       <td>289870414.0</td>
@@ -6186,12 +6466,12 @@ profit_df.head()
       <td>8.212152e+08</td>
       <td>1.748134e+09</td>
       <td>1.072414e+09</td>
+      <td>-8.968068e+06</td>
       <td>1.072414e+09</td>
       <td>118151347.0</td>
       <td>290359051.0</td>
       <td>821215193.0</td>
       <td>9.848463e+08</td>
-      <td>-8.968068e+06</td>
       <td>277448265.0</td>
       <td>-1.218109e+07</td>
       <td>-10306691.0</td>
@@ -6209,12 +6489,12 @@ profit_df.head()
       <td>8.688795e+08</td>
       <td>7.778100e+06</td>
       <td>1.748134e+09</td>
+      <td>3.555268e+07</td>
       <td>1.748134e+09</td>
       <td>617500281.0</td>
       <td>452220086.0</td>
       <td>868879522.0</td>
       <td>9.105270e+08</td>
-      <td>8.399853e+08</td>
       <td>86856088.0</td>
       <td>1.635915e+08</td>
       <td>70720921.0</td>
@@ -6232,12 +6512,12 @@ profit_df.head()
       <td>5.435883e+08</td>
       <td>8.900694e+08</td>
       <td>3.559452e+08</td>
+      <td>-5.068194e+06</td>
       <td>3.559452e+08</td>
       <td>767003568.0</td>
       <td>437234314.0</td>
       <td>543588329.0</td>
       <td>1.328723e+09</td>
-      <td>3.555268e+07</td>
       <td>28673154.0</td>
       <td>6.130084e+07</td>
       <td>302665550.0</td>
@@ -6433,143 +6713,143 @@ perc_profits_df.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>is_horror</th>
-      <th>is_family</th>
-      <th>is_comedy</th>
-      <th>is_sport</th>
-      <th>is_thriller</th>
-      <th>is_crime</th>
-      <th>is_documentary</th>
-      <th>is_biography</th>
-      <th>is_western</th>
-      <th>is_mystery</th>
-      <th>is_romance</th>
-      <th>is_history</th>
-      <th>is_animation</th>
-      <th>is_fantasy</th>
-      <th>is_music</th>
-      <th>is_adventure</th>
       <th>is_war</th>
-      <th>is_sci-fi</th>
+      <th>is_sport</th>
+      <th>is_history</th>
+      <th>is_western</th>
+      <th>is_thriller</th>
+      <th>is_music</th>
+      <th>is_mystery</th>
       <th>is_action</th>
       <th>is_drama</th>
+      <th>is_horror</th>
+      <th>is_biography</th>
+      <th>is_adventure</th>
+      <th>is_sci-fi</th>
+      <th>is_fantasy</th>
+      <th>is_animation</th>
+      <th>is_crime</th>
+      <th>is_documentary</th>
+      <th>is_family</th>
+      <th>is_comedy</th>
+      <th>is_romance</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
-      <td>179.744553</td>
-      <td>306.801427</td>
-      <td>125.568169</td>
-      <td>748.313273</td>
-      <td>193.206974</td>
-      <td>393.938507</td>
-      <td>74.443075</td>
-      <td>294.769113</td>
-      <td>-5.453776</td>
-      <td>40.193194</td>
-      <td>84.758115</td>
-      <td>-21.407805</td>
-      <td>125.568169</td>
-      <td>154.667286</td>
-      <td>686.999816</td>
-      <td>154.667286</td>
       <td>200.709137</td>
-      <td>-57.210757</td>
+      <td>748.313273</td>
+      <td>-21.407805</td>
+      <td>-5.453776</td>
+      <td>193.206974</td>
+      <td>686.999816</td>
+      <td>40.193194</td>
       <td>154.667286</td>
       <td>53.551908</td>
+      <td>179.744553</td>
+      <td>294.769113</td>
+      <td>154.667286</td>
+      <td>-57.210757</td>
+      <td>154.667286</td>
+      <td>125.568169</td>
+      <td>393.938507</td>
+      <td>74.443075</td>
+      <td>306.801427</td>
+      <td>125.568169</td>
+      <td>84.758115</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>197.489166</td>
-      <td>412.745555</td>
-      <td>204.285342</td>
-      <td>151.581268</td>
-      <td>294.341491</td>
-      <td>699.327786</td>
-      <td>158.502208</td>
-      <td>289.870414</td>
-      <td>349.948323</td>
-      <td>123.577303</td>
-      <td>174.763338</td>
-      <td>233.224912</td>
-      <td>521.260356</td>
-      <td>118.648403</td>
-      <td>360.316131</td>
-      <td>-57.210757</td>
       <td>162.894601</td>
-      <td>324.384139</td>
+      <td>151.581268</td>
+      <td>233.224912</td>
+      <td>349.948323</td>
+      <td>294.341491</td>
+      <td>360.316131</td>
+      <td>123.577303</td>
       <td>-57.210757</td>
       <td>84.758115</td>
+      <td>197.489166</td>
+      <td>289.870414</td>
+      <td>-57.210757</td>
+      <td>324.384139</td>
+      <td>118.648403</td>
+      <td>521.260356</td>
+      <td>699.327786</td>
+      <td>158.502208</td>
+      <td>412.745555</td>
+      <td>204.285342</td>
+      <td>174.763338</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>58.801779</td>
-      <td>145.179525</td>
-      <td>410.607596</td>
-      <td>-20.301812</td>
-      <td>393.938507</td>
-      <td>388.134853</td>
-      <td>255.202731</td>
-      <td>-10.306691</td>
-      <td>80.583507</td>
-      <td>221.958612</td>
-      <td>210.650574</td>
-      <td>74.443075</td>
-      <td>410.607596</td>
-      <td>42.964126</td>
-      <td>-12.811526</td>
-      <td>324.384139</td>
       <td>124.022184</td>
-      <td>582.711400</td>
+      <td>-20.301812</td>
+      <td>74.443075</td>
+      <td>80.583507</td>
+      <td>393.938507</td>
+      <td>-12.811526</td>
+      <td>221.958612</td>
       <td>324.384139</td>
       <td>40.193194</td>
+      <td>58.801779</td>
+      <td>-10.306691</td>
+      <td>324.384139</td>
+      <td>582.711400</td>
+      <td>42.964126</td>
+      <td>410.607596</td>
+      <td>388.134853</td>
+      <td>255.202731</td>
+      <td>145.179525</td>
+      <td>410.607596</td>
+      <td>210.650574</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>-4.910428</td>
-      <td>226.110043</td>
-      <td>434.439761</td>
-      <td>327.183044</td>
-      <td>455.263490</td>
-      <td>404.130763</td>
-      <td>-54.531884</td>
-      <td>74.443075</td>
-      <td>-79.727798</td>
-      <td>69.484870</td>
-      <td>210.190293</td>
-      <td>-88.276203</td>
-      <td>434.439761</td>
-      <td>247.000112</td>
-      <td>1527.246076</td>
-      <td>582.711400</td>
       <td>-88.830583</td>
-      <td>2.828400</td>
+      <td>327.183044</td>
+      <td>-88.276203</td>
+      <td>-79.727798</td>
+      <td>455.263490</td>
+      <td>64.641227</td>
+      <td>69.484870</td>
       <td>582.711400</td>
       <td>93.834458</td>
+      <td>-4.910428</td>
+      <td>74.443075</td>
+      <td>582.711400</td>
+      <td>2.828400</td>
+      <td>247.000112</td>
+      <td>434.439761</td>
+      <td>404.130763</td>
+      <td>-54.531884</td>
+      <td>226.110043</td>
+      <td>434.439761</td>
+      <td>210.190293</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>145.898193</td>
-      <td>240.238634</td>
-      <td>271.794164</td>
-      <td>122.601670</td>
-      <td>699.327786</td>
-      <td>328.530754</td>
-      <td>-40.897943</td>
-      <td>360.316131</td>
-      <td>620.791223</td>
-      <td>28.110935</td>
-      <td>113.506906</td>
-      <td>124.022184</td>
-      <td>271.794164</td>
-      <td>306.801427</td>
-      <td>64.641227</td>
-      <td>118.648403</td>
       <td>468.134036</td>
-      <td>356.027765</td>
+      <td>122.601670</td>
+      <td>124.022184</td>
+      <td>620.791223</td>
+      <td>699.327786</td>
+      <td>-90.503464</td>
+      <td>28.110935</td>
       <td>118.648403</td>
       <td>0.026547</td>
+      <td>145.898193</td>
+      <td>360.316131</td>
+      <td>118.648403</td>
+      <td>356.027765</td>
+      <td>306.801427</td>
+      <td>271.794164</td>
+      <td>328.530754</td>
+      <td>-40.897943</td>
+      <td>240.238634</td>
+      <td>271.794164</td>
+      <td>113.506906</td>
     </tr>
   </tbody>
 </table>
